@@ -7,7 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class OrderSuccessComponent implements OnInit {
 
-  constructor() { console.log('test'); }
+  constructor() {  }
 
   ngOnInit() {
   }
