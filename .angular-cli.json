@@ -6,6 +6,11 @@
   "apps": [
     {
       "root": "src",
+      "styles": [
+        "../node_modules/bootstrap/dist/css/bootstrap.min.css",
+        "../node_modules/font-awesome/css/font-awesome.css",
+        "styles.css"
+      ],
       "outDir": "dist",
       "assets": [
         "assets",
