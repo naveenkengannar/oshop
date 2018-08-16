@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { AuthService } from '../auth.service';
+import { OrderService } from '../order.service';
 
 @Component({
   selector: 'app-my-orders',
@@ -7,7 +9,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MyOrdersComponent implements OnInit {
 
-  constructor() { }
+  orders$;
+
+  constructor(
+    private authService: AuthService,
+    private orderService: OrderService) {
+
+    this.orders$ = authService.user$.switchMap(u => orderService.getOrdersByUser(u.uid));
+  }
 
   ngOnInit() {
   }
